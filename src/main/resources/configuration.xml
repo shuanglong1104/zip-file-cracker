@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<engine-path>D:/programs/winrar/WinRAR.exe</engine-path>
+	<file-path>D:/files/test.rar</file-path>
+	<min-length>1</min-length>
+	<max-length>10</max-length>
+	<password-charset>
+		1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+	</password-charset>
+</config>
