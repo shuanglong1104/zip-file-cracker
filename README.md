@@ -2,7 +2,7 @@
 a password cracker for lot of types of archives, e.g. rar/zip/7z/tar
 
 ### Overview
-* 这是一个破解加密压缩文件密码的小玩具，使用WinRAR作为解压工具，可以解压cab、tar、gz、bz2、jar、iso、7z、rar等格式的压缩包。<br>
+* 这是一个破解加密压缩文件密码的小玩具，使用WinRAR作为解压工具，可以解压RAR（ RAR 5.0需要WinRAR 5.0 ）、ZIP、7Z、ACE、 ARJ、BZ2、CAB、GZ、ISO、JAR、LZ、LZH、TAR、UUE、XZ、Z文件。<br>
   目前rar格式压缩文件在没有针对性破解算法的情况下，只能选择**暴力法**穷举所有可能的密码组合，尽管可以利用多线程提高效率，但它破解密码的速度依然慢（特别是密码位数多于5，且可能出现的字符范围较大时）。所以，看情况使用它。<br>
   
 * 需要注意的是，**不能将它用于违法行为**，如果使用者因为使用它而造成违法行为或意外损失，本人并不承担任何责任。
