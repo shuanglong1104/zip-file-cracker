@@ -9,18 +9,20 @@ a password cracker for lot of types of archives, e.g. rar/zip/7z/tar
 
 ### Instruction
 1. 安装[WinRAR个人免费版](http://www.winrar.com.cn/)
-2. 修改 /src/main/resources/configuration.xml 文件的配置，设置
+2. 修改 /src/main/resources/configuration.xml 文件的配置，包括
 ```
    WinRAR运行文件路径
    待解密压缩文件路径
    猜测密码的最小长度
    猜测密码的最大长度
    密码可能出现字符的集合
+   并发线程数
+   其他设置
 ```  
 3. 运行 /src/main/java/main/Main.java 文件 
-4. 等待结果，运行时间视密码复杂度而定，如果能确定密码位数，或是密码出现字符，将大大减少运行时间。
-5. 破解失败，试试调整密码长度、密码字符集。
+4. 等待结果，运行时间视密码复杂度而定，如果能确定密码位数，或是密码出现字符，将大大减少运行时间
+5. 破解失败，试试调整密码长度、密码字符集
 
 ### Examples
-测试文件是/testfiles目录下test.zip和test.rar两种格式压缩文件，密码均为22。
+测试文件位于/testfiles目录，test.zip和test.rar两种格式压缩文件密码均为22，test2密码为1C2
 
