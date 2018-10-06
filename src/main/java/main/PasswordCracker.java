@@ -139,7 +139,8 @@ public class PasswordCracker {
 	}
 
 	/*
-	 * 缓存被一个crack线程访问后，更新下一个待验证的密码 由于计算过程是加锁的，优化计算过程提高计算速度相应提高破解程序性能
+	 * 缓存被一个crack线程访问后，更新下一个待验证的密码 
+	 * 由于计算过程是加锁的，优化计算过程提高计算速度相应提高破解程序性能
 	 */
 	private void generateNextPassword(char[] buf, int index) {
 		char firstChar = cache.getCharSetFirstChar();
@@ -198,7 +199,7 @@ public class PasswordCracker {
 						goodPassword = curPassword;
 						synchronized (cache.getFinishedLock()) {
 							cache.setFinished(true);
-							logger.info(i + "号CrackThread破解密码成功，密码为" + goodPassword);
+							logger.info(i + "号CrackThread破解密码成功，密码为 " + goodPassword);
 							cache.setCounter(cache.getCounter().add(new BigInteger("1")));
 						}
 						break;
@@ -228,21 +229,21 @@ public class PasswordCracker {
 	 * status线程
 	 */
 	private class StatusThread extends Thread {
-		private int sleepTime = 50;
-		private int pre_pwds = 0;
-		private int cur_pwds = 0;
+		private int sleepTime = 30;
+		private BigInteger pre_pwds = new BigInteger("0");
+		private BigInteger cur_pwds = new BigInteger("0");
 
 		@Override
 		public void run() {
 			while (!cache.getFinished()) {
 				synchronized (cache.getFinishedLock()) {
-					cur_pwds = cache.getCounter().intValue() / sleepTime;
+					cur_pwds = cache.getCounter();
 					cache.setCounter(new BigInteger("0"));
 				}
-				if (pre_pwds == 0) {
+				if (pre_pwds.compareTo(new BigInteger("0")) == 0) {
 					pre_pwds = cur_pwds;
 				} else {
-					pre_pwds = (pre_pwds + cur_pwds) / 2;
+					pre_pwds = pre_pwds.add(cur_pwds).divide(new BigInteger("2"));
 				}
 
 				try {
@@ -251,7 +252,7 @@ public class PasswordCracker {
 					logger.error("线程非法中断！计算平均速度可能出错", e);
 				}
 			}
-			System.out.println("破解平均速度约为 " + pre_pwds + "/sec");
+			System.out.println("破解平均速度约为 " + pre_pwds.toString(10) + " per 30 secs");
 		}
 	}
 }
