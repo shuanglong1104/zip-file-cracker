@@ -24,5 +24,5 @@ a password cracker for lot of types of archives, e.g. rar/zip/7z/tar
 5. 破解失败，试试调整密码长度、密码字符集
 
 ### Examples
-测试文件位于/testfiles目录，test.zip和test.rar两种格式压缩文件密码均为22，test2密码为1C2
+测试文件位于/testfiles目录，test.zip和test.rar两种格式压缩文件密码均为22，test2.rar密码为1C2
 
