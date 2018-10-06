@@ -21,15 +21,16 @@ public class Main {
 		} catch (DocumentException de) {
 			System.out.println(de.getMessage());
 			return;
-		} catch (ConfigUncorrectException | ValidatePasswordException e) {
+		} catch (ConfigUncorrectException | ValidatePasswordException | InterruptedException e) {
 			System.out.println(e.getMessage());
 			return;
 		}
 		
-		if (cracker.getHasFound()) {
-			System.out.println("password is " + cracker.getPassword());
+		String password = cracker.getGoodPassword();
+		if (password != null && !password.equals("")) {
+			System.out.println("Password is " + password);
 		} else {
-			System.out.println("failed");
+			System.out.println("Failed");
 		}
 	}
 

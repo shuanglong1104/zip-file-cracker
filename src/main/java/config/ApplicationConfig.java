@@ -19,6 +19,14 @@ public class ApplicationConfig {
 	 * 	密码字符集
 	 */
 	private String charset;
+	/*
+	 * 	破解线程数
+	 */
+	private int threadNum;
+	/*
+	 * 	显示测试密码信息
+	 */
+	private boolean showDetail;
 	
 	/*
 	 * 	singleton
@@ -66,5 +74,18 @@ public class ApplicationConfig {
 	public void setCharset(String charset) {
 		this.charset = charset;
 	}
-	
+	public int getThreadNum() {
+		return threadNum;
+	}
+	public void setThreadNum(int threadNum) {
+		this.threadNum = threadNum;
+	}
+
+	public boolean getShowDetail() {
+		return showDetail;
+	}
+
+	public void setShowDetail(boolean showDetail) {
+		this.showDetail = showDetail;
+	}	
 }

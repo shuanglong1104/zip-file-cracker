@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
+	<!-- settings may not be blank -->
 	<engine-path>D:/programs/winrar/WinRAR.exe</engine-path>
 	<file-path>D:/files/test.rar</file-path>
 	<min-length>1</min-length>
-	<max-length>10</max-length>
+	<max-length>8</max-length>
 	<password-charset>
 		1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 	</password-charset>
+	<!-- number of crack concurrent thread -->
+	<thread-num>4</thread-num>
+	<!-- print tested password, Yes or No -->
+	<show-detail>Yes</show-detail>
 </config>
