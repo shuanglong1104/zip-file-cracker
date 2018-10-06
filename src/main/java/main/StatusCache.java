@@ -15,7 +15,7 @@ public class StatusCache {
 	private BigInteger counter;
 	/*
 	 * 	存放结束标识，表示是否找到正确密码
-	 *  由finishedLock锁住
+	 *      由finishedLock锁住
 	 */
 	private boolean finished;
 	/*
